@@ -6,6 +6,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core/styles";
 import movieList from "../stores/moviesList";
 import { observer } from "mobx-react";
+import WatchedButton from "./Buttons/WatchedButton";
+import DeleteButton from "./Buttons/DeleteButton";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -23,15 +25,17 @@ function WatchItem() {
     <>
       {movieList.movies.map((movie) => {
         return (
-          <List>
+          <List key={movie.id}>
             <ListItem>
               <h3 className={classes.text}>{movie.name}</h3>
               <ListItemSecondaryAction>
-                <IconButton edge="end" aria-label="delete">
+                {/* <IconButton edge="end" aria-label="delete">
                   <DeleteIcon />
-                </IconButton>
-                <button>Watched</button>
-                <button>Delet</button>
+                </IconButton> */}
+                <WatchedButton />
+                <span onClick={() => movieList.DeleteWatch(movie.name)}>
+                  <DeleteButton />
+                </span>
               </ListItemSecondaryAction>
             </ListItem>
           </List>
