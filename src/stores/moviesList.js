@@ -19,6 +19,7 @@ class MoviesList {
       onClick: action,
       DeleteWatch: action,
       DeleteWatched: action,
+      Watched: action,
     });
   }
 
@@ -26,12 +27,24 @@ class MoviesList {
     this.movies.map((movie) => console.log(movie.name));
   };
 
-  DeleteWatch = (movieNme) => {
-    this.movies = this.movies.filter((movie) => movie.name !== movieNme);
+  DeleteWatch = (movieName) => {
+    this.movies = this.movies.filter((movie) => movie.name !== movieName);
   };
 
-  DeleteWatched = (movieNme) => {
-    this.watched = this.watched.filter((movie) => movie.name !== movieNme);
+  DeleteWatched = (movieName) => {
+    this.watched = this.watched.filter((movie) => movie.name !== movieName);
+  };
+
+  Watched = (movieName) => {
+    this.movies = this.movies.filter((movie) => movie.name !== movieName.name);
+    this.watched.push(movieName);
+  };
+
+  UnWatched = (movieName) => {
+    this.watched = this.watched.filter(
+      (movie) => movie.name !== movieName.name
+    );
+    this.movies.push(movieName);
   };
 }
 

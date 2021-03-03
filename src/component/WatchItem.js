@@ -32,7 +32,9 @@ function WatchItem() {
                 {/* <IconButton edge="end" aria-label="delete">
                   <DeleteIcon />
                 </IconButton> */}
-                <WatchedButton />
+                <span onClick={() => movieList.Watched(movie)}>
+                  <WatchedButton />
+                </span>
                 <span onClick={() => movieList.DeleteWatch(movie.name)}>
                   <DeleteButton />
                 </span>
