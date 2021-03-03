@@ -16,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function WatchItem() {
+function WatchedItem() {
   const classes = useStyles();
 
   return (
     <>
-      {movieList.movies.map((movie) => {
+      {movieList.watched.map((movie) => {
         return (
           <List>
             <ListItem>
@@ -30,7 +30,7 @@ function WatchItem() {
                 <IconButton edge="end" aria-label="delete">
                   <DeleteIcon />
                 </IconButton>
-                <button>Watched</button>
+                <button>Unwatch</button>
                 <button>Delet</button>
               </ListItemSecondaryAction>
             </ListItem>
@@ -41,4 +41,4 @@ function WatchItem() {
   );
 }
 
-export default observer(WatchItem);
+export default observer(WatchedItem);

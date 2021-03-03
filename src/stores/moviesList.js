@@ -4,6 +4,12 @@ import { action, makeObservable, observable } from "mobx";
 class MoviesList {
   movies = movies;
 
+  watched = [
+    {
+      name: "Superman",
+    },
+  ];
+
   constructor() {
     makeObservable(this, {
       movies: observable,

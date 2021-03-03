@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-import MovieItem from "./MovieItem";
+import WatchedItem from "./WatchedItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,8 +22,7 @@ export default function WatchedList() {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <div className={classes.demo}>
-            <MovieItem />
-            <MovieItem />
+            <WatchedItem />
             <Divider />
           </div>
         </Grid>
