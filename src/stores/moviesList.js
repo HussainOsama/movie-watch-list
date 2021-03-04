@@ -28,6 +28,7 @@ class MoviesList {
       Watched: action,
       SearchWatch: action,
       SearchedWatch: action,
+      AddMovie: action,
     });
   }
 
@@ -66,6 +67,10 @@ class MoviesList {
     this.watched = this.watched.filter((movie) =>
       movie.name.includes(movieName)
     );
+  };
+
+  AddMovie = (movieName) => {
+    this.movies.push({ name: movieName });
   };
 }
 
