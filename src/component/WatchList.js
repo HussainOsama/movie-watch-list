@@ -35,7 +35,7 @@ export default function WatchList() {
             <SearchBar
               // value={state}
               onChange={(newValue) => {
-                setState(newValue);
+                // setState(newValue);
                 movieList.SearchWatch(newValue);
                 // console.log(state);
               }}

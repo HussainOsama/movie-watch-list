@@ -21,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
 function WatchItem() {
   const classes = useStyles();
 
+  const my = () => {
+    alert("Alert");
+    return () => alert("HEllo");
+  };
+
   return (
     <>
       {movieList.movies.map((movie) => {
@@ -35,6 +40,7 @@ function WatchItem() {
                 <span onClick={() => movieList.Watched(movie)}>
                   <WatchedButton />
                 </span>
+                {/* <span onClick={()=>my()}> */}
                 <span onClick={() => movieList.DeleteWatch(movie.name)}>
                   <DeleteButton />
                 </span>
